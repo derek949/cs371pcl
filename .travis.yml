@@ -40,4 +40,13 @@ before_script:
 
 script:
     - date
+    - ls -al
+    - make collatz-tests
+    - ls -al
+    - make html
+    - ls -al
+    - make Collatz.log
+    - ls -al
     - make test
+    - ls -al
+    - make check
