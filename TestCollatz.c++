@@ -100,17 +100,11 @@ gtest.h
 
 
 
-% g++-4.8 -fprofile-arcs -ftest-coverage -pedantic -std=c++11 -Wall Collatz.c++ TestCollatz.c++ -o TestCollatz -lgtest -lgtest_main -lpthread
+% g++ -fprofile-arcs -ftest-coverage -pedantic -std=c++11 -Wall Collatz.c++ TestCollatz.c++ -o TestCollatz -lgtest -lgtest_main -lpthread
 
 
 
-% valgrind TestCollatz        >  TestCollatz.out 2>&1
-% gcov-4.8 -b Collatz.c++     >> TestCollatz.out
-% gcov-4.8 -b TestCollatz.c++ >> TestCollatz.out
-
-
-
-% cat TestCollatz.out
+% valgrind TestCollatz >  TestCollatz.out 2>&1
 ==14225== Memcheck, a memory error detector
 ==14225== Copyright (C) 2002-2011, and GNU GPL'd, by Julian Seward et al.
 ==14225== Using Valgrind-3.7.0 and LibVEX; rerun with -h for copyright info
@@ -148,18 +142,28 @@ Running main() from gtest_main.cc
 ==14225==
 ==14225== For counts of detected and suppressed errors, rerun with: -v
 ==14225== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 2 from 2)
+
+
+
+% gcov -b Collatz.c++     | grep -A 5 "File 'Collatz.c++'"     >> TestCollatz.out
+
+
+
+% gcov -b TestCollatz.c++ | grep -A 5 "File 'TestCollatz.c++'" >> TestCollatz.out
+
+
+
+% cat TestCollatz.out
 File 'Collatz.c++'
 Lines executed:100.00% of 17
 Branches executed:100.00% of 18
 Taken at least once:61.11% of 18
 Calls executed:89.47% of 19
 Creating 'Collatz.c++.gcov'
-...
 File 'TestCollatz.c++'
 Lines executed:100.00% of 26
 Branches executed:57.14% of 224
 Taken at least once:28.57% of 224
 Calls executed:54.07% of 209
 Creating 'TestCollatz.c++.gcov'
-...
 */

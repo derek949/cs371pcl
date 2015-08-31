@@ -4,14 +4,6 @@
 // Glenn P. Downing
 // -------------------------------
 
-// -------
-// defines
-// -------
-
-#ifdef ONLINE_JUDGE
-    #define NDEBUG
-#endif
-
 // --------
 // includes
 // --------
@@ -30,7 +22,7 @@ int main () {
     return 0;}
 
 /*
-% g++-4.8 -pedantic -std=c++11 -Wall Collatz.c++ RunCollatz.c++ -o RunCollatz
+% g++ -pedantic -std=c++11 -Wall Collatz.c++ RunCollatz.c++ -o RunCollatz
 
 
 
