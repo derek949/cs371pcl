@@ -97,7 +97,7 @@ TestCollatz.tmp: TestCollatz
 	./TestCollatz
 	$(GCOV) -b Collatz.c++     | grep -A 5 "File 'Collatz.c++'"
 	$(GCOV) -b TestCollatz.c++ | grep -A 5 "File 'TestCollatz.c++'"
-	./TestCollatz                                                   >  TestCollatz.tmp 2>&1
+	./TestCollatz                                                   >   TestCollatz.tmp 2>&1
 	$(GCOV) -b Collatz.c++     | grep -A 5 "File 'Collatz.c++'"     >> TestCollatz.tmp
 	$(GCOV) -b TestCollatz.c++ | grep -A 5 "File 'TestCollatz.c++'" >> TestCollatz.tmp
 	diff TestCollatz.tmp TestCollatz.out
