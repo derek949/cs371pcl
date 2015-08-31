@@ -48,3 +48,5 @@ script:
     - make Collatz.log
     - ls -al
     - make test
+    - ls -al
+    - make check
