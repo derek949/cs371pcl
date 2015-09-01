@@ -104,7 +104,13 @@ gtest.h
 
 
 
-% valgrind TestCollatz >  TestCollatz.out 2>&1
+% valgrind TestCollatz                                         >  TestCollatz.out 2>&1
+% gcov -b Collatz.c++     | grep -A 5 "File 'Collatz.c++'"     >> TestCollatz.out
+% gcov -b TestCollatz.c++ | grep -A 5 "File 'TestCollatz.c++'" >> TestCollatz.out
+
+
+
+% cat TestCollatz.out
 ==14225== Memcheck, a memory error detector
 ==14225== Copyright (C) 2002-2011, and GNU GPL'd, by Julian Seward et al.
 ==14225== Using Valgrind-3.7.0 and LibVEX; rerun with -h for copyright info
@@ -142,18 +148,6 @@ Running main() from gtest_main.cc
 ==14225==
 ==14225== For counts of detected and suppressed errors, rerun with: -v
 ==14225== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 2 from 2)
-
-
-
-% gcov -b Collatz.c++     | grep -A 5 "File 'Collatz.c++'"     >> TestCollatz.out
-
-
-
-% gcov -b TestCollatz.c++ | grep -A 5 "File 'TestCollatz.c++'" >> TestCollatz.out
-
-
-
-% cat TestCollatz.out
 File 'Collatz.c++'
 Lines executed:100.00% of 17
 Branches executed:100.00% of 18
