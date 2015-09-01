@@ -94,7 +94,5 @@ TestCollatz: Collatz.h Collatz.c++ TestCollatz.c++
 
 TestCollatz.tmp: TestCollatz
 	$(VALGRIND) ./TestCollatz
-	./TestCollatz > TestCollatz.tmp
-	$(GCOV) -b Collatz.c++     | grep -A 5 "File 'Collatz.c++'"     >> TestCollatz.tmp
-	$(GCOV) -b TestCollatz.c++ | grep -A 5 "File 'TestCollatz.c++'" >> TestCollatz.tmp
-	diff TestCollatz.tmp TestCollatz.out
+	$(GCOV) -b Collatz.c++     | grep -A 5 "File 'Collatz.c++'"
+	$(GCOV) -b TestCollatz.c++ | grep -A 5 "File 'TestCollatz.c++'"
