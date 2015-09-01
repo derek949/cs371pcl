@@ -93,7 +93,7 @@ TestCollatz: Collatz.h Collatz.c++ TestCollatz.c++
 	$(CXX) $(CXXFLAGS) $(GCOVFLAGS) Collatz.c++ TestCollatz.c++ -o TestCollatz $(LDFLAGS)
 
 TestCollatz.tmp: TestCollatz
-	$(VALGRIND) ./TestCollatz > TestCollatz.tmp
+	$(VALGRIND) ./TestCollatz                                       >  TestCollatz.tmp 2>&1
 	$(GCOV) -b Collatz.c++     | grep -A 5 "File 'Collatz.c++'"     >> TestCollatz.tmp
 	$(GCOV) -b TestCollatz.c++ | grep -A 5 "File 'TestCollatz.c++'" >> TestCollatz.tmp
 	cat TestCollatz.tmp
