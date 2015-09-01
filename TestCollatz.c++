@@ -75,31 +75,6 @@ TEST(CollatzFixture, solve) {
     ASSERT_EQ("1 10 1\n100 200 1\n201 210 1\n900 1000 1\n", w.str());}
 
 /*
-% ls -al /usr/include/gtest/
-...
-gtest.h
-...
-
-
-
-% locate libgtest.a
-/usr/lib/libgtest.a
-...
-
-
-
-% locate libpthread.a
-...
-/usr/lib32/libpthread.a
-
-
-
-% locate libgtest_main.a
-/usr/lib/libgtest_main.a
-...
-
-
-
 % g++ -fprofile-arcs -ftest-coverage -pedantic -std=c++11 -Wall Collatz.c++ TestCollatz.c++ -o TestCollatz -lgtest -lgtest_main -lpthread
 
 
