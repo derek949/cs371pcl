@@ -1,3 +1,26 @@
+Running main() from gtest_main.cc
+[==========] Running 7 tests from 1 test case.
+[----------] Global test environment set-up.
+[----------] 7 tests from CollatzFixture
+[ RUN      ] CollatzFixture.read
+[       OK ] CollatzFixture.read (0 ms)
+[ RUN      ] CollatzFixture.eval_1
+[       OK ] CollatzFixture.eval_1 (0 ms)
+[ RUN      ] CollatzFixture.eval_2
+[       OK ] CollatzFixture.eval_2 (0 ms)
+[ RUN      ] CollatzFixture.eval_3
+[       OK ] CollatzFixture.eval_3 (0 ms)
+[ RUN      ] CollatzFixture.eval_4
+[       OK ] CollatzFixture.eval_4 (0 ms)
+[ RUN      ] CollatzFixture.print
+[       OK ] CollatzFixture.print (0 ms)
+[ RUN      ] CollatzFixture.solve
+[       OK ] CollatzFixture.solve (0 ms)
+[----------] 7 tests from CollatzFixture (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 7 tests from 1 test case ran. (0 ms total)
+[  PASSED  ] 7 tests.
 File 'Collatz.c++'
 Lines executed:100.00% of 16
 Branches executed:100.00% of 22
